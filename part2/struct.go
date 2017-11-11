@@ -37,21 +37,6 @@ var (
 	s = Vertex{}      // X:0 and Y:0
 )
 
-func main() {
-	var class_24 = Classes{"John", "Nick"}
-	fmt.Println(class_24)
-	class_24.teacher = "axx"
-	fmt.Println(class_24)
-	class_23 := &class_24
-	class_25 := class_24
-	class_25.teacher = "25"
-	fmt.Println(class_24) //no difference
-	class_23.teacher = "chong"
-	fmt.Println(class_24) //show difference
-	fmt.Println(class_25) //no difference
-	fmt.Println(p, q, r, s)
-}
-
 /*
 这里在给自己回忆一下大一学过的C++的指针
 int p = 10
@@ -73,3 +58,21 @@ int* p1 = &p
 我们应该这样来定义 定义一个指向指针的指针
 int** pp = &p1
 */
+
+/*
+ 实际上Go支持只提供类型
+*/
+func main() {
+	var class_24 = Classes{"John", "Nick"}
+	fmt.Println(class_24)
+	class_24.teacher = "axx"
+	fmt.Println(class_24)
+	class_23 := &class_24
+	class_25 := class_24
+	class_25.teacher = "25"
+	fmt.Println(class_24) //no difference
+	class_23.teacher = "chong"
+	fmt.Println(class_24) //show difference
+	fmt.Println(class_25) //no difference
+	fmt.Println(p, q, r, s)
+}
